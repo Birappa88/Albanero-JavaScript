@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        alert("From HEAD: " + document.body); // null, there's no <body> yet
+    </script>
+</head>
+
+<body>
+    <div id="elem">
+        <div id="elem-content">Element</div>
+    </div>
+
+    <ul>
+        <li>The</li>
+        <li>test</li>
+    </ul>
+    <ul>
+        <li>has</li>
+        <li>passed</li>
+    </ul>
+    <script>
+        // function sayHi() {
+        //     alert("Hello");
+        // }
+
+        // // // global functions are methods of the global object:
+        // window.sayHi();
+
+        // alert(window.innerHeight); // inner window height
+
+        // // change the background color to red
+        // document.body.style.background = "red";
+
+        // // change it back after 1 second
+        // setTimeout(() => document.body.style.background = "blue", 1000);
+
+        // document.body.style.background = "black";
+
+        // alert(location.href); // shows current URL
+        // if (confirm("Go to Wikipedia?")) {
+        //     location.href = "https://wikipedia.org"; // redirect the browser to another URL
+        // }
+        alert("From HEAD: " + document.body); // null, there's no <body> yet
+
+        // get the element
+        let elem = document.getElementById('elem');
+
+        // make its background red
+        elem.style.background = 'red';
+
+        let elements = document.querySelectorAll('ul > li:last-child');
+
+        for (let elem of elements) {
+            alert(elem.innerHTML); // "test", "passed"
+        }
+
+    </script>
+</body>
+
+</html>
