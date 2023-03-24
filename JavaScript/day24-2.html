@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <input id="elem" type="button" value="Click me"> -->
+
+    <input type="button" id="elem" onclick="alert('Before')" value="Click me">
+
+    <script>
+        function countRabbits() {
+            for (let i = 1; i <= 3; i++) {
+                alert("Rabbit number " + i);
+            }
+            // elem.onclick = function () {
+            //     alert('Thank you');
+            // };
+
+            elem.onclick = function () { // overwrites the existing handler
+                alert('After'); // only this will be shown
+            };
+        }
+        function handler1() {
+            alert('Thanks!');
+        };
+
+        function handler2() {
+            alert('Thanks again!');
+        }
+
+        elem.onclick = () => alert("Hello");
+        elem.addEventListener("click", handler1); // Thanks!
+        elem.addEventListener("click", handler2); // Thanks again!
+
+        let obj = {
+            handleEvent(event) {
+                alert(event.type + " at " + event.currentTarget);
+            }
+        };
+
+        elem.addEventListener('click', obj);
+    </script>
+    <input type="button" onclick="countRabbits()" value="Count rabbits!">
+</body>
+
+</html>

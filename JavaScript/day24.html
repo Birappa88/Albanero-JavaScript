@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+    </script>
+</head>
+
+<body>
+    <ul id="ul"></ul>
+    <div id="div">Button</div>
+    <script>
+        function getListContent() {
+            let fragment = new DocumentFragment();
+
+            for (let i = 1; i <= 3; i++) {
+                let li = document.createElement('li');
+                li.append(i);
+                fragment.append(li);
+            }
+
+            return fragment;
+        }
+
+        ul.append(getListContent()); // (*)
+
+        document.write('<b>Hello from JS</b>');
+
+        // if we run this code, the <body> will blink
+        document.body.style.display = "none"; // hide
+
+        setTimeout(() => document.body.style.display = "", 1000); // back to normal
+
+        document.body.style.background = 'red'; //set background to red
+
+        setTimeout(() => document.body.style.removeProperty('background'), 1000); // remove background after 1 second
+
+        // we can set special style flags like "important" here
+        div.style.cssText = `color: red !important;
+    background-color: yellow;
+    width: 100px;
+    text-align: center;
+  `;
+
+        alert(div.style.cssText);
+
+        document.body.style.margin = 20;
+    alert(document.body.style.margin); // '' (empty string, the assignment is ignored)
+
+    // now add the CSS unit (px) - and it works
+    document.body.style.margin = '20px';
+    alert(document.body.style.margin); // 20px
+
+    alert(document.body.style.marginTop); // 20px
+    alert(document.body.style.marginLeft); // 20px
+
+    </script>
+    <p>Somewhere in the page...</p>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>Smith</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>Pete</td>
+                <td>Brown</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td>Ann</td>
+                <td>Lee</td>
+                <td>5</td>
+            </tr>
+            <tr>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
