@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="container">
+        <div class="smiley-green">
+            <div class="left-eye"></div>
+            <div class="right-eye"></div>
+            <div class="smile"></div>
+        </div>
+
+        <div class="smiley-yellow">
+            <div class="left-eye"></div>
+            <div class="right-eye"></div>
+            <div class="smile"></div>
+        </div>
+
+        <div class="smiley-red">
+            <div class="left-eye"></div>
+            <div class="right-eye"></div>
+            <div class="smile"></div>
+        </div>
+    </div>
+
+    <textarea id="log">Events will show up here!
+    </textarea>
+
+    <script>
+        container.onmouseover = container.onmouseout = handler;
+
+        function handler(event) {
+
+            function str(el) {
+                if (!el) return "null"
+                return el.className || el.tagName;
+            }
+
+            log.value += event.type + ':  ' +
+                'target=' + str(event.target) +
+                ',  relatedTarget=' + str(event.relatedTarget) + "\n";
+            log.scrollTop = log.scrollHeight;
+
+            if (event.type == 'mouseover') {
+                event.target.style.background = 'pink'
+            }
+            if (event.type == 'mouseout') {
+                event.target.style.background = ''
+            }
+        }
+    </script>
+</body>
+
+</html>

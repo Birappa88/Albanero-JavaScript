@@ -43,11 +43,11 @@ obj2.hsd = "sesss"
 let obj3 = { ...obj }
 
 // Map, filter, reduce, find, some, foreach
-
-let arr = [2, 23, 1, 3, 4]
-let arr1 = [2, 23, 1, 3, 4]
-let sum = 0
-let arrr = arr.reduce((i, k) => i += k, 0)
+-
+// let arr = [2, 23, 1, 3, 4]
+// let arr1 = [2, 23, 1, 3, 4]
+// let sum = 0
+// let arrr = arr.reduce((i, k) => i += k, 0)
 console.log(arrr)
 
 // nullish 

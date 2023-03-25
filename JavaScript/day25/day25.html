@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="button">Alt+Shift+Click on me!</button>
+
+    <script>
+        button.onclick = function (event) {
+            if (event.altKey && event.shiftKey) {
+                alert('Hooray!');
+            }
+        };
+    </script>
+    <div oncopy="alert('Copying forbidden!');return false">
+        Dear user,
+        The copying is forbidden for you.
+        If you know JS or HTML, then you can get everything from the page source though.
+    </div>
+    <div>
+        <style>
+            div {
+                width: 50px;
+                height: 50px;
+                position: absolute;
+                margin-right: 20%;
+            }
+        </style>
+        <!-- <div style="background:blue" onmouseover="alert('never works')"></div> -->
+        <div style="background:red" onmouseover="alert('over red!')"></div>
+        <script>
+            function checkPhoneKey(key) {
+                return (key >= '0' && key <= '9') || ['+', '(', ')', '-'].includes(key);
+            }
+
+
+        </script>
+
+        <input onkeydown="return checkPhoneKey(event.key)" placeholder="Phone, please" type="tel">
+        <script>
+            window.addEventListener('scroll', function () {
+                document.getElementById('showScroll').innerHTML = window.pageYOffset + 'px';
+            });
+        </script>
+</body>
+
+</html>
